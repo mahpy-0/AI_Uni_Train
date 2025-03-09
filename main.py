@@ -11,3 +11,11 @@ for row in range(rows):
     for column in range(columns):
         row_numbers.append(random.randint(0, 1))
     tiles.append(row_numbers)
+
+
+DIMENSIONS = (rows, columns)
+ENV = tiles
+FULL_CLEAN_FLAG = False
+
+def set_clean_flag():
+    FULL_CLEAN_FLAG = True
