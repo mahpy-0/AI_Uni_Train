@@ -243,103 +243,103 @@ class Agent():
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_right"
                     return self._action_selector.get("go_right")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_right"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_right"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_right"
                     return self._action_selector.get("go_right")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_right"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_right"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == self._ACTIVE_ENV[1] - 1):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1):
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-                elif (precept[0] == self._ACTIVE_ENV[0]) & (precept[1] == self._ACTIVE_ENV[1] - 1):
+                elif (precept[0] == len(self._ACTIVE_ENV[0])) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1):
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-            elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == 0):
+            elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == 0):
 
-                if (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == 0) & (self._last_action == ""):
+                if (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == 0) & (self._last_action == ""):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_right"
                     return self._action_selector.get("go_right")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_right"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_right"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_right"
                     return self._action_selector.get("go_right")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_right"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_right"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == self._ACTIVE_ENV[1] - 1):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1):
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-                elif (precept[0] == 0) & (precept[1] == self._ACTIVE_ENV[1] - 1):
+                elif (precept[0] == 0) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1):
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-            elif (precept[0] == 0) & (precept[1] == self._ACTIVE_ENV[1] - 1):
+            elif (precept[0] == 0) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1):
 
-                if (precept[0] == 0) & (precept[1] == self._ACTIVE_ENV[1] - 1) & (self._last_action == ""):
+                if (precept[0] == 0) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1) & (self._last_action == ""):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_left"
                     return self._action_selector.get("go_right")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_left"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_left"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_left"
                     return self._action_selector.get("go_left")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_left"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_left"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
@@ -347,37 +347,37 @@ class Agent():
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == 0):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == 0):
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-            elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == self._ACTIVE_ENV[1] - 1):
+            elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1):
 
-                if (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == self._ACTIVE_ENV[1] - 1) & (self._last_action == ""):
+                if (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == len(self._ACTIVE_ENV[1]) - 1) & (self._last_action == ""):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_up"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_up"):
                     self._last_action = "go_left"
                     return self._action_selector.get("go_left")
 
-                elif (precept[0] == 0) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_left"):
+                elif (precept[0] == 0) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_left"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] < self._ACTIVE_ENV[0]) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] < len(self._ACTIVE_ENV[0])) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_down"
                     return self._action_selector.get("go_down")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_down"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_down"):
                     self._last_action = "go_left"
                     return self._action_selector.get("go_left")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] < self._ACTIVE_ENV[1]) & (self._last_action == "go_left"):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] < len(self._ACTIVE_ENV[1])) & (self._last_action == "go_left"):
                     self._last_action = "go_up"
                     return self._action_selector.get("go_up")
 
@@ -385,22 +385,22 @@ class Agent():
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
-                elif (precept[0] == self._ACTIVE_ENV[0] - 1) & (precept[1] == 0):
+                elif (precept[0] == len(self._ACTIVE_ENV[0]) - 1) & (precept[1] == 0):
                     set_clean_flag()
                     return self._action_selector.get("clean_this_tile")
 
         else:
 
-            if (precept[0] <= floor(self._ACTIVE_ENV[0]/2)) & (precept[0] - 1 >= 0):
+            if (precept[0] <= floor(len(self._ACTIVE_ENV[0])/2)) & (precept[0] - 1 >= 0):
                 return self._action_selector.get("go_up")
 
-            elif (precept[0] > floor(self._ACTIVE_ENV[0]/2)) & (precept[0] + 1 < self._ACTIVE_ENV[0]):
+            elif (precept[0] > floor(len(self._ACTIVE_ENV[0])/2)) & (precept[0] + 1 < len(self._ACTIVE_ENV[0])):
                 return self._action_selector.get("go_down")
 
-            elif (precept[1] <= floor(self._ACTIVE_ENV[1]/2)) & (precept[1] - 1 >= 0):
+            elif (precept[1] <= floor(len(self._ACTIVE_ENV[1])/2)) & (precept[1] - 1 >= 0):
                 return self._action_selector.get("go_left")
 
-            elif (precept[1] > floor(self._ACTIVE_ENV[1]/2)) & (precept[1] + 1 < self._ACTIVE_ENV[1]):
+            elif (precept[1] > floor(len(self._ACTIVE_ENV[1])/2)) & (precept[1] + 1 < len(self._ACTIVE_ENV[1])):
                 return self._action_selector.get("go_right")
 
             else:

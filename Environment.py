@@ -10,7 +10,7 @@ import random
 # def environment(action: str) -> list:
 #     """
 #     take a action\n
-#     action =: suck | go_right | go_left | go_up | go_down | start
+#     action =: suck | move_right | move_left | move_up | move_down | start
 #     """
 #     if action == "suck":
 #         ENV[AGENT_LOC[0]][AGENT_LOC[1]] = 0
@@ -20,7 +20,7 @@ import random
 #             ENV[AGENT_LOC[0]][AGENT_LOC[1]]
 #         ]
 
-#     elif action == "go_down":
+#     elif action == "move_down":
 #         AGENT_LOC[0] += 1
 #         return [
 #             AGENT_LOC[0],
@@ -28,7 +28,7 @@ import random
 #             ENV[AGENT_LOC[0]][AGENT_LOC[1]]
 #         ]
 
-#     elif action == "go_up":
+#     elif action == "move_up":
 #         AGENT_LOC[0] -= 1
 #         return [
 #             AGENT_LOC[0],
@@ -36,7 +36,7 @@ import random
 #             ENV[AGENT_LOC[0]][AGENT_LOC[1]]
 #         ]
 
-#     elif action == "go_right":
+#     elif action == "move_right":
 #         AGENT_LOC[1] += 1
 #         return [
 #             AGENT_LOC[0],
@@ -44,7 +44,7 @@ import random
 #             ENV[AGENT_LOC[0]][AGENT_LOC[1]]
 #         ]
 
-#     elif action == "go_left":
+#     elif action == "move_left":
 #         AGENT_LOC[1] -= 1
 #         return [
 #             AGENT_LOC[0],
@@ -84,7 +84,7 @@ class Environment():
                 row_numbers.append(random.randint(0, 1))
             tiles.append(row_numbers)
 
-        self._ENV = tiles.copy
+        self._ENV = tiles.copy()
         self._DIMENSIONS = (rows, columns)
         self._rows = rows
         self._columns = columns
@@ -114,7 +114,7 @@ class Environment():
         """
         take a action
 
-        action =: suck | go_right | go_left | go_up | go_down | start
+        action =: suck | move_right | move_left | move_up | move_down | start
 
         return precept as list for agent
 
@@ -132,7 +132,7 @@ class Environment():
                 self._ENV[self._agent_location[0]][self._agent_location[1]]
             ]
 
-        elif action == "go_down":
+        elif action == "move_down":
             self._agent_location[0] += 1
             return [
                 self._agent_location[0],
@@ -140,7 +140,7 @@ class Environment():
                 self._ENV[self._agent_location[0]][self._agent_location[1]]
             ]
 
-        elif action == "go_up":
+        elif action == "move_up":
             self._agent_location[0] -= 1
             return [
                 self._agent_location[0],
@@ -148,7 +148,7 @@ class Environment():
                 self._ENV[self._agent_location[0]][self._agent_location[1]]
             ]
 
-        elif action == "go_right":
+        elif action == "move_right":
             self._agent_location[1] += 1
             return [
                 self._agent_location[0],
@@ -156,7 +156,7 @@ class Environment():
                 self._ENV[self._agent_location[0]][self._agent_location[1]]
             ]
 
-        elif action == "go_left":
+        elif action == "move_left":
             self._agent_location[1] -= 1
             return [
                 self._agent_location[0],
