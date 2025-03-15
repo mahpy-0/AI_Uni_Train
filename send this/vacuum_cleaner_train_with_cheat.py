@@ -33,7 +33,8 @@ class VacuumAgent:
 
         # ? n = row_number
         # ? m = col_number
-        self.x, self.y = 1, env.cols - 1 # ? if want to start from the top right corner: possible starts (0, 0) - (0, 1) - (1, 0)
+        # ? if want to start from the top right corner: possible starts (0, 0) - (0, 1) - (1, 0)
+        self.x, self.y = 1, env.cols - 1
         # self.x, self.y = 0, 1 # ? if want to start from the top left corner: possible starts (0, m) - (0, m - 1) - (1, m)
         # self.x, self.y = 0, 1 # ? if want to start from the bottom right corner: possible starts (n, 0) - (n, 1) - (n - 1, 0)
         # self.x, self.y = 0, 1 # ? if want to start from the bottom left corner: possible starts (n, m) - (n, m - 1) - ( n - 1, m)
@@ -51,7 +52,7 @@ class VacuumAgent:
         ]
         start_corner = min(corners, key=lambda corner: abs(
             self.x - corner[0]) + abs(self.y - corner[1]
-        ))
+                                      ))
 
         spiral_path = []
         visited_positions = set()
@@ -105,7 +106,7 @@ class VacuumAgent:
 
 def main():
 
-    # ? can change to any number since we're cheating :-) make sure to choose any corner or near room in agent x and y 
+    # ? can change to any number since we're cheating :-) make sure to choose any corner or near room in agent x and y
     rows = 6
     cols = 6
 
@@ -113,9 +114,6 @@ def main():
 
     env = Environment(rows, cols)
     agent = VacuumAgent(env)
-
-    global all_rooms_clean
-    all_rooms_clean = False
 
     while not env.is_clean():
         agent.action()

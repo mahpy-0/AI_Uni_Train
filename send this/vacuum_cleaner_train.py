@@ -40,7 +40,7 @@ class VacuumAgent:
         ]
         start_corner = min(corners, key=lambda corner: abs(
             self.x - corner[0]) + abs(self.y - corner[1]
-        ))
+                                      ))
 
         spiral_path = []
         visited_positions = set()
@@ -100,9 +100,6 @@ def main():
 
     env = Environment(rows, cols)
     agent = VacuumAgent(env)
-
-    global all_rooms_clean
-    all_rooms_clean = False
 
     while not env.is_clean():
         agent.action()
