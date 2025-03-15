@@ -46,10 +46,10 @@ class Agent:
         self.visited = set()
         self.steps = 0
         self.path = []
-        self.target_path = self.generate_spiral_path()
+        self.target_path = self.create_path()
 
-    def generate_spiral_path(self) -> list:
-        """generate a spiral path from one the selected corners"""
+    def create_path(self) -> list:
+        """generate a path from one the selected corners"""
         corners = [
             (0, 0),   # top left
             (0, self.env.cols - 1),   # top right
@@ -60,19 +60,19 @@ class Agent:
         start_corner = min(corners, key=lambda corner: abs(
             self.x - corner[0]) + abs(self.y - corner[1]))
 
-        spiral_path = []
-        visited_positions = set()
+        path = []
+        visited_locations = set()
         x, y = start_corner
         delta_x, delta_y = 0, 1
 
-        # this loop create the spiral_path that the agent will follow to clean all room
+        # this loop create the path that the agent will follow to clean all room
         for _ in range(self.env.rows * self.env.cols):   # loop rows * cols times
             # if current locarion is not visited and x is between the 0 _ rows - 1 and y is between 0 _ cols - 1
-            if ((x, y) not in visited_positions) and (0 <= x < self.env.rows) and (0 <= y < self.env.cols):
-                # append the (x, y) to spiral_path to traverse over later on
-                spiral_path.append((x, y))
-                # add the (x, y) to visited_positions set to have it in memory to not visit this room later
-                visited_positions.add((x, y))
+            if ((x, y) not in visited_locations) and (0 <= x < self.env.rows) and (0 <= y < self.env.cols):
+                # append the (x, y) to path to traverse over later on
+                path.append((x, y))
+                # add the (x, y) to visited_locations set to have it in memory to not visit this room later
+                visited_locations.add((x, y))
 
             possible_directions = [
                 (delta_x, delta_y),   # move to right
@@ -80,11 +80,11 @@ class Agent:
                 (-delta_x, -delta_y),   # move to left
                 (-delta_y, delta_x)   # move to top
             ]
-            moved = False   # var to control if there is no more possible move break the parent loop and return the spiral_path
-            # check if the possible next room is valid and feasible to move, if is change the delta__x and delta_y to the selected ones so the x and y changed and added to the spiral_path and visited_positions
+            moved = False   # var to control if there is no more possible move break the parent loop and return the path
+            # check if the possible next room is valid and feasible to move, if is change the delta__x and delta_y to the selected ones so the x and y changed and added to the path and visited_locations
             for new_delta_x, new_delta_y in possible_directions:
                 next_x, next_y = x + new_delta_x, y + new_delta_y
-                if (0 <= next_x < self.env.rows) and (0 <= next_y < self.env.cols) and ((next_x, next_y) not in visited_positions):
+                if (0 <= next_x < self.env.rows) and (0 <= next_y < self.env.cols) and ((next_x, next_y) not in visited_locations):
                     delta_x, delta_y = new_delta_x, new_delta_y
                     moved = True
                     break
@@ -95,7 +95,7 @@ class Agent:
 
             x, y = x + delta_x, y + delta_y
 
-        return spiral_path
+        return path
 
     def action(self):
         """do an action based on the current location"""

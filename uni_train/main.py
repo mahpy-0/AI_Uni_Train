@@ -13,5 +13,5 @@ agent = Agent(env)
 while not env.is_clean():
     agent.action()
 
-print(f"All rooms are clean! Total steps taken: {agent.steps}")
-print(f"Path followed: {agent.path}")
+print(f"All the rooms are clean. Total steps: {agent.steps}")
+print(f"Path agent took: {agent.path}")
